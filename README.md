@@ -25,7 +25,7 @@ Estas instrucciones te ayudarán a obtener una copia del proyecto y ponerlo en f
     * **Spark Core 2.9.4:** Framework web utilizado en el proyecto para construir aplicaciones web.
     * **SLF4J API 2.0.12:** API para registrar mensajes de registro (Logging).
     * **SLF4J Simple 2.0.12:** Implementación simple de SLF4J API para la salida de registros.
-### Instalación
+## Instalación
 
 Sigue estos pasos para configurar el entorno de desarrollo:
 
@@ -44,7 +44,7 @@ Sigue estos pasos para configurar el entorno de desarrollo:
    Deberías poder visualizar lo siguiente en el Docker Desktop
 
    ![](/img/DockerDesk.png)
-### Corriendo la aplicación
+## Corriendo la aplicación
 Puedes ingresar a la aplicación por medio de la dirección:
 
 * http://localhost:8080/
@@ -95,13 +95,13 @@ Las pruebas pasan correctamente:
 ![](/img/test.png)
 
 
-### Diseño
+## Diseño
 El proyecto SparkDockerDemoLive es una aplicación web que proporciona operaciones matemáticas básicas a través de un servidor Spark. El diseño del proyecto se centra en la simplicidad y la eficiencia para proporcionar funcionalidades matemáticas esenciales a través de una interfaz web amigable.
 
 * Interfaz de Usuario Simple y Funcional: La interfaz de usuario se presenta en forma de formularios HTML donde los usuarios pueden ingresar datos y realizar cálculos de manera intuitiva. Cada formulario está asociado con un botón de "Calcular" que envía una solicitud al servidor para procesar la operación correspondiente.
 
 * Funcionalidades Claras y Directas: Las operaciones disponibles incluyen el cálculo del seno, coseno, verificación de palíndromos y magnitud de vectores. Estas operaciones cubren un conjunto básico pero esencial de funciones matemáticas.
-### Arquitecura
+## Arquitecura
 La arquitectura del proyecto sigue un enfoque sencillo pero efectivo, basado en un patrón de diseño de servidor web clásico.
 
 * Servidor Spark: La clase SparkWebServer actúa como el controlador principal del servidor web. Utiliza Spark para configurar las rutas de acceso y definir cómo responder a las solicitudes HTTP entrantes. Las rutas están asociadas con métodos que realizan las operaciones matemáticas utilizando la clase Operaciones.
@@ -110,7 +110,7 @@ La arquitectura del proyecto sigue un enfoque sencillo pero efectivo, basado en 
 
 * Interfaz de Usuario Web: La interfaz de usuario está escrita en HTML y CSS, y utiliza JavaScript para interactuar con el servidor. Cada operación matemática tiene su propio formulario HTML que recopila datos del usuario y los envía al servidor para su procesamiento.
 
-### Cómo generar imágenes en Docker:
+## Cómo generar imágenes en Docker:
 
 Debe contar con los siguientes archivos en el directorio raíz:
 
@@ -172,10 +172,10 @@ docker push dnielben/firstsprkwebapprepo:latest
 
 ![](/img/push.png)
 
-### Construido con:
+## Construido con:
 - Java - Programming language
 - Maven - Dependency Management
-### Autor
+## Autor
 - Jaider Gonzalez
 
 
