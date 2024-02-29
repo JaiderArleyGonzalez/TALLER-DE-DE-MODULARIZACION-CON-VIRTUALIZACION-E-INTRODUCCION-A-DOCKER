@@ -10,7 +10,7 @@
 <h1>Operaciones Matemáticas</h1>
 
 <h2>Seno</h2>
-<form action="/sin">
+<form>
     <label for="angulo_sin">Ángulo (en grados):</label><br>
     <input type="number" id="angulo_sin" name="angulo" required><br><br>
     <input type="button" value="Calcular Seno" onclick="loadSin()">
@@ -18,7 +18,7 @@
 <div id="sinRespuesta"></div>
 
 <h2>Coseno</h2>
-<form action="/cos">
+<form>
     <label for="angulo_cos">Ángulo (en grados):</label><br>
     <input type="number" id="angulo_cos" name="angulo" required><br><br>
     <input type="button" value="Calcular Coseno" onclick="loadCos()">
@@ -26,7 +26,7 @@
 <div id="cosRespuesta"></div>
 
 <h2>Verificar Palíndromo</h2>
-<form action="/esPalindromo">
+<form>
     <label for="cadena_palindromo">Cadena:</label><br>
     <input type="text" id="cadena_palindromo" name="cadena" required><br><br>
     <input type="button" value="Verificar Palíndromo" onclick="loadPalindromo()">
@@ -34,7 +34,7 @@
 <div id="palindromoRespuesta"></div>
 
 <h2>Magnitud del Vector</h2>
-<form action="/magnitudVector">
+<form>
     <label for="componente_x">Componente x:</label><br>
     <input type="number" id="componente_x" name="x" required><br>
     <label for="componente_y">Componente y:</label><br>
@@ -46,31 +46,51 @@
 <script>
     function loadSin() {
         let angulo = document.getElementById("angulo_sin").value;
-        fetch("http://localhost:4567/sin/" + angulo)
-            .then(response => response.text())
-            .then(data => document.getElementById("sinRespuesta").innerHTML = data);
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("sinRespuesta").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/sin/" + angulo, true);
+        xhttp.send();
     }
 
     function loadCos() {
         let angulo = document.getElementById("angulo_cos").value;
-        fetch("http://localhost:4567/cos/" + angulo)
-            .then(response => response.text())
-            .then(data => document.getElementById("cosRespuesta").innerHTML = data);
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("cosRespuesta").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/cos/" + angulo, true);
+        xhttp.send();
     }
 
     function loadPalindromo() {
         let cadena = document.getElementById("cadena_palindromo").value;
-        fetch("http://localhost:4567/esPalindromo/" + cadena)
-            .then(response => response.text())
-            .then(data => document.getElementById("palindromoRespuesta").innerHTML = data);
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("palindromoRespuesta").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/esPalindromo/" + cadena, true);
+        xhttp.send();
     }
 
     function loadMagnitud() {
         let x = document.getElementById("componente_x").value;
         let y = document.getElementById("componente_y").value;
-        fetch("http://localhost:4567/magnitudVector/" + x + "/" + y)
-            .then(response => response.text())
-            .then(data => document.getElementById("magnitudRespuesta").innerHTML = data);
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("magnitudRespuesta").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/magnitudVector/" + x + "/" + y, true);
+        xhttp.send();
     }
 </script>
 </body>
