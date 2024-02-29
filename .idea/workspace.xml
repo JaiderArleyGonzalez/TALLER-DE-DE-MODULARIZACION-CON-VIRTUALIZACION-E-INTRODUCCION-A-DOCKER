@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="94f27fd4-42b6-436a-b2ff-1050a3002e59" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/co/edu/escuelaing/sparkdockerdemolive/Operaciones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/co/edu/escuelaing/sparkdockerdemolive/SparkWebServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/co/edu/escuelaing/sparkdockerdemolive/SparkWebServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/co/edu/escuelaing/sparkdockerdemolive/OperacionesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
