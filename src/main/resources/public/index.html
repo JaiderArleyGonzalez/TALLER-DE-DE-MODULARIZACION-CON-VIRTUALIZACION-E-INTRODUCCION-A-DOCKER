@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Operaciones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<h1>Operaciones Matemáticas</h1>
+
+<h2>Seno</h2>
+<form action="/sin">
+    <label for="angulo_sin">Ángulo (en grados):</label><br>
+    <input type="number" id="angulo_sin" name="angulo" required><br><br>
+    <input type="button" value="Calcular Seno" onclick="loadSin()">
+</form>
+<div id="sinRespuesta"></div>
+
+<h2>Coseno</h2>
+<form action="/cos">
+    <label for="angulo_cos">Ángulo (en grados):</label><br>
+    <input type="number" id="angulo_cos" name="angulo" required><br><br>
+    <input type="button" value="Calcular Coseno" onclick="loadCos()">
+</form>
+<div id="cosRespuesta"></div>
+
+<h2>Verificar Palíndromo</h2>
+<form action="/esPalindromo">
+    <label for="cadena_palindromo">Cadena:</label><br>
+    <input type="text" id="cadena_palindromo" name="cadena" required><br><br>
+    <input type="button" value="Verificar Palíndromo" onclick="loadPalindromo()">
+</form>
+<div id="palindromoRespuesta"></div>
+
+<h2>Magnitud del Vector</h2>
+<form action="/magnitudVector">
+    <label for="componente_x">Componente x:</label><br>
+    <input type="number" id="componente_x" name="x" required><br>
+    <label for="componente_y">Componente y:</label><br>
+    <input type="number" id="componente_y" name="y" required><br><br>
+    <input type="button" value="Calcular Magnitud" onclick="loadMagnitud()">
+</form>
+<div id="magnitudRespuesta"></div>
+
+<script>
+    function loadSin() {
+        let angulo = document.getElementById("angulo_sin").value;
+        fetch("http://localhost:4567/sin/" + angulo)
+            .then(response => response.text())
+            .then(data => document.getElementById("sinRespuesta").innerHTML = data);
+    }
+
+    function loadCos() {
+        let angulo = document.getElementById("angulo_cos").value;
+        fetch("http://localhost:4567/cos/" + angulo)
+            .then(response => response.text())
+            .then(data => document.getElementById("cosRespuesta").innerHTML = data);
+    }
+
+    function loadPalindromo() {
+        let cadena = document.getElementById("cadena_palindromo").value;
+        fetch("http://localhost:4567/esPalindromo/" + cadena)
+            .then(response => response.text())
+            .then(data => document.getElementById("palindromoRespuesta").innerHTML = data);
+    }
+
+    function loadMagnitud() {
+        let x = document.getElementById("componente_x").value;
+        let y = document.getElementById("componente_y").value;
+        fetch("http://localhost:4567/magnitudVector/" + x + "/" + y)
+            .then(response => response.text())
+            .then(data => document.getElementById("magnitudRespuesta").innerHTML = data);
+    }
+</script>
+</body>
+</html>
