@@ -156,7 +156,7 @@ Autentíquese en su cuenta de dockerhub (ingrese su usuario y clave si es requer
 Empuje la imagen al repositorio en DockerHub
 
 ```
-docker push dnielben/firstsprkwebapprepo:latest
+docker push jaidergonzalez/firstsprkwebapprepo:latest
 ```
 **Al final deberá obtener lo siguiente:**
 
